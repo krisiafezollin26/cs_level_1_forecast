@@ -1,4 +1,4 @@
-# cs_level_1_forecast pipeline explanation
+# cs_level1_forecast pipeline explanation
 This repository contains scripts and queries for the Level 1 forecast.
 
 ## Setup and Execution Process
