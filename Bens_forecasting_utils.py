@@ -30,7 +30,8 @@ def main(input_sheet_id, input_sheet_range, holidays_sheet_id='1DDMBg8-q5SuPpeL1
         logging.info('Script start time: ' + datetime.now().strftime('%d/%m/%Y %H:%M:%S'))
     
     df_raw_vol = import_gsheet_to_df(input_sheet_id, input_sheet_range)
-    df_raw_vol['value'] = pd.to_numeric(df_raw_vol['value'], downcast="float")
+    df_raw_vol['value'] = pd.to_numeric(df_raw_vol['value'].astype(str).str.replace(',', ''), downcast="float")
+
 
     # holidays data
     df_holidays = import_gsheet_to_df(holidays_sheet_id, holidays_sheet_range)
